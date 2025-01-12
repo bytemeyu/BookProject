@@ -1,0 +1,4 @@
+- classe Pessoa: nome, idade, sexo [todos com encapsulamento privado, portanto, com métodos getters and setters]; fazerAniver();
+- classe Livro: titulo, autor, totPaginas, pagAtual, aberto, leitor [que vai ser uma instância da classe Pessoa]; detalhes();
+- relação Pessoa-Livro: a pessoa lê o livro
+- interface Publicacao [que vai ser implementada pela classe Livro]: abrir(), fechar(), folhear(), avancarPag, voltarPag
