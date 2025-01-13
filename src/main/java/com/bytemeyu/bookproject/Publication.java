@@ -6,4 +6,5 @@ public interface Publication {
     public abstract void leafThroughBook();
     public abstract void advancePageOfTheBook();
     public abstract void backPageOfTheBook();
+    public abstract void getDetails();
 }

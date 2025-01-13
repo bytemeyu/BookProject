@@ -36,9 +36,16 @@ public class Person implements PersonInterface {
     }
 
     @Override
+    public void currentStatus() {
+        System.out.println(this.getName());
+        System.out.println(this.getAge());
+        System.out.println(this.getGender());
+    }
+
+    @Override
     public void haveABirthday() {
         int age = this.getAge();
         this.setAge(age + 1);
-        System.out.println(this.getName() + "had a birthday.");
+        System.out.println(this.getName() + " had a birthday.");
     }
 }

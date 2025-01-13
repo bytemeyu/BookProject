@@ -11,6 +11,12 @@ public class Book implements Publication {
     private boolean opened;
     private Person reader;
 
+    public Book(String title, String author, int totalPages) {
+        setTitle(title);
+        setAuthor(author);
+        setTotalPages(totalPages);
+    }
+
     public String getTitle() {
         return title;
     }
@@ -61,12 +67,14 @@ public class Book implements Publication {
 
     @Override
     public void openBook() {
-
+        this.setOpened(true);
+        System.out.println(this.getTitle() + "was opened.");
     }
 
     @Override
     public void closeBook() {
-
+        this.setOpened(false);
+        System.out.println(this.getTitle() + "was closed.");
     }
 
     @Override
@@ -76,13 +84,30 @@ public class Book implements Publication {
 
     @Override
     public void advancePageOfTheBook() {
-
+        int currentPage = this.getCurrentPage();
+        this.setCurrentPage(currentPage + 1);
+        System.out.println("We were on page " + currentPage + ", now we are on page " + this.getCurrentPage() + ".");
     }
 
     @Override
     public void backPageOfTheBook() {
-
+        int currentPage = this.getCurrentPage();
+        this.setCurrentPage(currentPage - 1);
+        System.out.println("We were on page " + currentPage + ", now we are on page " + this.getCurrentPage() + ".");
     }
 
-    //details method?
+    @Override
+    public void getDetails() {
+        String bookDetails =
+                "---------\n" +
+                "Book Title: " + this.getTitle() + "\n" +
+                "Book Author: " + this.getAuthor() + "\n" +
+                "Total Pages: " + this.getTotalPages() + "\n" +
+                "Current Page: " + this.getCurrentPage() + "\n" +
+                "Is it open? " + this.isOpened() + "\n" +
+                "Reader: " + this.getReader().getName() + "\n" +
+                        "---------\n";
+
+        System.out.println(bookDetails);
+    }
 }
